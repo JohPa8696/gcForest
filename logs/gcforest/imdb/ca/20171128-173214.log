@@ -1,0 +1,90 @@
+[ 2017-11-28 17:32:14,736][train_cascade.<module>] tools.train_cascade
+[ 2017-11-28 17:32:14,737][train_cascade.<module>] 
+{
+    "cascade":{
+        "data_save_dir":"/home/dpha010/Desktop/results/gcforest/imdb/ca-tree500-n4x2-3folds/",
+        "early_stopping_rounds":4,
+        "estimators":[
+            {
+                "max_depth":null,
+                "max_features":1,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"ExtraTreesClassifier"
+            },
+            {
+                "max_depth":null,
+                "max_features":1,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"ExtraTreesClassifier"
+            },
+            {
+                "max_depth":null,
+                "max_features":1,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"ExtraTreesClassifier"
+            },
+            {
+                "max_depth":null,
+                "max_features":1,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"ExtraTreesClassifier"
+            },
+            {
+                "max_depth":null,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"RandomForestClassifier"
+            },
+            {
+                "max_depth":null,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"RandomForestClassifier"
+            },
+            {
+                "max_depth":null,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"RandomForestClassifier"
+            },
+            {
+                "max_depth":null,
+                "n_estimators":500,
+                "n_folds":3,
+                "n_jobs":-1,
+                "type":"RandomForestClassifier"
+            }
+        ],
+        "n_classes":2,
+        "random_state":0
+    },
+    "dataset":{
+        "test":{
+            "data_set":"test",
+            "feature":"tfidf",
+            "layout_x":"vector",
+            "type":"imdb"
+        },
+        "train":{
+            "data_set":"train",
+            "feature":"tfidf",
+            "layout_x":"vector",
+            "type":"imdb"
+        }
+    }
+}
+[ 2017-11-28 17:33:12,736][cascade_classifier.fit_transform] X_groups_train.shape=[(25000, 5000)],y_train.shape=(25000,),X__groups_test.shape=[(25000, 5000)],y_test.shape=(25000,)
+[ 2017-11-28 17:33:12,902][cascade_classifier.fit_transform] group_dims=[5000]
+[ 2017-11-28 17:33:13,066][cascade_classifier.fit_transform] X_train.shape=(25000, 5000),X_test.shape=(25000, 5000)
+[ 2017-11-28 17:33:13,397][cascade_classifier.fit_transform] [layer=0] look_indexs=[0], X_cur_train.shape=(25000, 5000), X_cur_test.shape=(25000, 5000)

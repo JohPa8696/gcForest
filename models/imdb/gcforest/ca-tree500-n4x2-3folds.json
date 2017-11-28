@@ -11,7 +11,7 @@
     "test": {"type": "imdb", "data_set": "test", "layout_x": "vector", "feature": "tfidf"}
 },
 "cascade": {
-    //"data_save_dir": "/mnt/raid/fengji/gcforest/imdb/ca-tree500-n4x2-3folds/",
+    "data_save_dir": "/home/dpha010/Desktop/results/gcforest/imdb/ca-tree500-n4x2-3folds/",
     "random_state": 0,
     "early_stopping_rounds": 4,
     "n_classes": 2,

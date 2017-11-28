@@ -95,38 +95,45 @@ For instance, all the model specification files needed for MNIST is stored in mo
 
 You can define your own structure by writing similar json files.
 
-FineGrained model's config (dataset)
+FineGrained model's config (dataset) e.g config files with naming format: fg_...json
 ------------------------
-* dataset.train, dataset.test: [dict]
-    - coresponds to the particular datasets defined in lib/datasets
-    - type [str]: see lib/datasets/__init__.py for a reference
-    - You can use your own dataset by writing similar wrappers.
+    * dataset.train, dataset.test: [dict]
+        - coresponds to the particular datasets defined in lib/datasets
+        - type [str]: see lib/datasets/__init__.py for a reference
+        - You can use your own dataset by writing similar wrappers.
+        E.g:
+        {
+        "dataset":{
+            "train": {"type": "mnist", "data_set": "train", "layout_x": "tensor"},
+            "test": {"type": "mnist", "data_set": "test", "layout_x": "tensor"}
+        },
+
+    FineGrained model's config (train)
+    ----------------------------------
+
+    * train.keep_model_in_mem: [bool] default=0
+        - if 0, the forest will be freed in RAM
+    * train.data_cache : [dict]
+        - coresponds to the DataCache in lib/dataset/data_cache.py
+    * train.data_cache.cache_dir (str)
+        - make sure to change "/mnt/raid/fengji/gcforest/cifar10/fg-tree500-depth100-3folds/datas" to your own path
+
+    FineGrained model's config (net)
+    ----------------------------------
+    * net.outputs: [list]
+        - List of the data names output by this model
+    * net.layers: [List of Layers]
+        - Layer's Config, see lib/gcforest/layers for a reference
 
 
-FineGrained model's config (train)
-----------------------------------
-
-* train.keep_model_in_mem: [bool] default=0
-    - if 0, the forest will be freed in RAM
-* train.data_cache : [dict]
-    - coresponds to the DataCache in lib/dataset/data_cache.py
-* train.data_cache.cache_dir (str)
-    - make sure to change "/mnt/raid/fengji/gcforest/cifar10/fg-tree500-depth100-3folds/datas" to your own path
-
-FineGrained model's config (net)
-----------------------------------
-* net.outputs: [list]
-    - List of the data names output by this model
-* net.layers: [List of Layers]
-    - Layer's Config, see lib/gcforest/layers for a reference
 
 Cascade model's config (dataset)
 ------------------------------
-Similar as FineGrained's model config (dataset)
+    Similar as FineGrained's model config (dataset)
 
-Cascade model's config (cascade)
-------------------------------
-see lib/gcforest/cascade/cascade_classifier.py __init__  for a reference
+    Cascade model's config (cascade)
+    ------------------------------
+    see lib/gcforest/cascade/cascade_classifier.py __init__  for a reference
 
 
 
