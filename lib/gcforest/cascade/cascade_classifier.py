@@ -20,16 +20,20 @@ from ..utils.metrics import accuracy_pb
 
 LOGGER = get_logger('gcforest.cascade.cascade_classifier')
 
+#Check if a path exist, else create it
 def check_dir(path):
+    #Constructthe absolute path by concatenate parent directory and given directory
     d = osp.abspath(osp.join(path, osp.pardir))
     if not osp.exists(d):
         os.makedirs(d)
 
+#Calculate the accuracy of the prediction
 def calc_accuracy(y_true, y_pred, name, prefix=""):
     acc = 100. * np.sum(np.asarray(y_true)==y_pred) / len(y_true)
     LOGGER.info('{}Accuracy({})={:.2f}%'.format(prefix, name, acc))
     return acc
 
+#Find the highest accuracy: optimal_layer_id
 def get_opt_layer_id(acc_list):
     """ Return layer id with max accuracy on training data """
     opt_layer_id = np.argsort(-np.asarray(acc_list), kind='mergesort')[0]

@@ -165,7 +165,8 @@
 [ 2017-11-28 18:06:50,930][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_6 - 3_folds.train_1.predict)=87.90%
 [ 2017-11-28 18:07:50,552][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_6 - 3_folds.train_2.predict)=87.43%
 [ 2017-11-28 18:07:52,534][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_6 - 3_folds.train.predict)=87.60%
-[ 2017-11-28 18:07:52,535][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_6 - 3_folds.test.predict)=87.62%
+[ 2017-11-28 18:07:52,535][kfold_wrapper.log_eval_metrics] Accuracy(layer_1
+- estimator_6 - 3_folds.test.predict)=87.62%
 [ 2017-11-28 18:08:50,747][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_7 - 3_folds.train_0.predict)=87.76%
 [ 2017-11-28 18:09:51,011][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_7 - 3_folds.train_1.predict)=86.96%
 [ 2017-11-28 18:10:52,203][kfold_wrapper.log_eval_metrics] Accuracy(layer_1 - estimator_7 - 3_folds.train_2.predict)=87.88%

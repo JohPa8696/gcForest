@@ -9,12 +9,12 @@
 "dataset": {
     "train": {
         "type": "ds_pickle2",
-        "data_path": "/mnt/raid/fengji/gcforest/mnist/fg-tree300-depth0/datas/train/outputs.pkl",
+        "data_path": "/home/dpha010/Desktop/results/gcforest/mnist/fg-tree300-depth0/datas/train/outputs.pkl",
         "X_keys": ["pool1/7x7/ets", "pool1/7x7/rf", "pool1/10x10/ets", "pool1/10x10/rf", "pool1/13x13/ets", "pool1/13x13/rf"]
     },
     "test": {
         "type": "ds_pickle2", 
-        "data_path": "/mnt/raid/fengji/gcforest/mnist/fg-tree300-depth0/datas/test/outputs.pkl",
+        "data_path": "/home/dpha010/Desktop/results/gcforest/mnist/fg-tree300-depth0/datas/test/outputs.pkl",
         "X_keys": ["pool1/7x7/ets", "pool1/7x7/rf", "pool1/10x10/ets", "pool1/10x10/rf", "pool1/13x13/ets", "pool1/13x13/rf"]
     }
 },

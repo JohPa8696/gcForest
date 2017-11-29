@@ -108,8 +108,8 @@ FineGrained model's config (dataset) e.g config files with naming format: fg_...
             "test": {"type": "mnist", "data_set": "test", "layout_x": "tensor"}
         },
 
-    FineGrained model's config (train)
-    ----------------------------------
+FineGrained model's config (train)
+----------------------------------
 
     * train.keep_model_in_mem: [bool] default=0
         - if 0, the forest will be freed in RAM
@@ -127,15 +127,30 @@ FineGrained model's config (dataset) e.g config files with naming format: fg_...
 
 
 
-Cascade model's config (dataset)
+Configation for Cascade model (dataset)
 ------------------------------
-    Similar as FineGrained's model config (dataset)
+    - Similar as FineGrained's model config (dataset):
+    - File name in the format of : ca-tree500-n4x2-3folds.json
+    - {cascade}-{no. of tree in each forest}-{number of forest: completely random + random forests} - {k-fold cross validation}.json
+    **1. dataset {}**
+        *  specifies the training and test datasets defined in lib/datasets.
+        *  {type: *the dataset type*, data_set:*which dataset train or test*, layout: *the input layout????*, feature:*input feature data* }
+     **2. cascade {}**
+        * data_save_dir: *dictory where data will be saved????*
+        * random_state: ??
+        * early_stopping_ground: ???
+        * n_classes: ???
+        * estimators {} : each estimator is either a **completely random** or a **random forest**
+            ...
+            ** n-folds: *number of folds for cross validation*
+            ** type: *type of forest* e.g: extratreesclassifiers, randomforestclassifier,...
+            ** n_estimators: *no. of trees in the forest*
+            ** max_depth: *maximum depth of a decision tree*
+            ** n_jobs: *???*
 
     Cascade model's config (cascade)
     ------------------------------
     see lib/gcforest/cascade/cascade_classifier.py __init__  for a reference
-
-
 
 Examples
 ========

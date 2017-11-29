@@ -21,7 +21,7 @@
         "keep_in_mem":{
             "default":0
         },
-        "cache_dir":"/mnt/raid/fengji/gcforest/mnist/fg-tree500-depth100-3folds/datas"
+        "cache_dir":"/home/dpha010/Desktop/results/gcforest/mnist/fg-tree500-depth100-3folds/datas"
     }
 },
 "net":{
