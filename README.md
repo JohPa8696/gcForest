@@ -97,11 +97,11 @@ You can define your own structure by writing similar json files.
 
 FineGrained model's config (dataset) e.g config files with naming format: fg_...json
 ------------------------
-    * dataset.train, dataset.test: [dict]
-        - coresponds to the particular datasets defined in lib/datasets
-        - type [str]: see lib/datasets/__init__.py for a reference
-        - You can use your own dataset by writing similar wrappers.
-        E.g:
+* dataset.train, dataset.test: [dict]
+- coresponds to the particular datasets defined in lib/datasets
+- type [str]: see lib/datasets/__init__.py for a reference
+- You can use your own dataset by writing similar wrappers.
+E.g:
         {
         "dataset":{
             "train": {"type": "mnist", "data_set": "train", "layout_x": "tensor"},
@@ -111,46 +111,46 @@ FineGrained model's config (dataset) e.g config files with naming format: fg_...
 FineGrained model's config (train)
 ----------------------------------
 
-    * train.keep_model_in_mem: [bool] default=0
-        - if 0, the forest will be freed in RAM
-    * train.data_cache : [dict]
-        - coresponds to the DataCache in lib/dataset/data_cache.py
-    * train.data_cache.cache_dir (str)
-        - make sure to change "/mnt/raid/fengji/gcforest/cifar10/fg-tree500-depth100-3folds/datas" to your own path
+* train.keep_model_in_mem: [bool] default=0
+- if 0, the forest will be freed in RAM
+* train.data_cache : [dict]
+- coresponds to the DataCache in lib/dataset/data_cache.py
+* train.data_cache.cache_dir (str)
+- make sure to change "/mnt/raid/fengji/gcforest/cifar10/fg-tree500-depth100-3folds/datas" to your own path
 
-    FineGrained model's config (net)
-    ----------------------------------
-    * net.outputs: [list]
-        - List of the data names output by this model
-    * net.layers: [List of Layers]
-        - Layer's Config, see lib/gcforest/layers for a reference
+FineGrained model's config (net)
+----------------------------------
+* net.outputs: [list]
+- List of the data names output by this model
+* net.layers: [List of Layers]
+- Layer's Config, see lib/gcforest/layers for a reference
 
 
 
 Configation for Cascade model (dataset)
 ------------------------------
-    - Similar as FineGrained's model config (dataset):
-    - File name in the format of : ca-tree500-n4x2-3folds.json
-    - {cascade}-{no. of tree in each forest}-{number of forest: completely random + random forests} - {k-fold cross validation}.json
-    **1. dataset {}**
-        *  specifies the training and test datasets defined in lib/datasets.
-        *  {type: *the dataset type*, data_set:*which dataset train or test*, layout: *the input layout????*, feature:*input feature data* }
-     **2. cascade {}**
-        * data_save_dir: *dictory where data will be saved????*
-        * random_state: ??
-        * early_stopping_ground: ???
-        * n_classes: ???
-        * estimators {} : each estimator is either a **completely random** or a **random forest**
-            ...
-            ** n-folds: *number of folds for cross validation*
-            ** type: *type of forest* e.g: extratreesclassifiers, randomforestclassifier,...
-            ** n_estimators: *no. of trees in the forest*
-            ** max_depth: *maximum depth of a decision tree*
-            ** n_jobs: *???*
+- Similar as FineGrained's model config (dataset):
+- File name in the format of : ca-tree500-n4x2-3folds.json
+- {cascade}-{no. of tree in each forest}-{number of forest: completely random + random forests} - {k-fold cross validation}.json
+1. **dataset {}**
+  *  specifies the training and test datasets defined in lib/datasets.
+  *  {type: *the dataset type*, data_set:*which dataset train or test*, layout: *the input layout????*, feature:*input feature data* }
+2. **cascade {}**
+    * data_save_dir: *dictory where data will be saved????*
+    * random_state: ??
+    * early_stopping_ground: ???
+    * n_classes: ???
+    * estimators {} : each estimator is either a **completely random** or a **random forest**
+...
+        * n-folds: *number of folds for cross validation*
+        * type: *type of forest* e.g: extratreesclassifiers, randomforestclassifier,...
+        * n_estimators: *no. of trees in the forest*
+        * max_depth: *maximum depth of a decision tree*
+        * n_jobs: *???*
 
-    Cascade model's config (cascade)
-    ------------------------------
-    see lib/gcforest/cascade/cascade_classifier.py __init__  for a reference
+Cascade model's config (cascade)
+------------------------------
+see lib/gcforest/cascade/cascade_classifier.py __init__  for a reference
 
 Examples
 ========
