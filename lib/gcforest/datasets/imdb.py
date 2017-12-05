@@ -18,7 +18,8 @@ X_train.len: min,mean,max=11,238,2494
 X_test.len: min,mean,max=7,230,2315
 """
 class IMDB(ds_base):
-    # This class represent the IMDB dataset, it uses the standard dataset provided by keras and
+    # This class represent the IMDB dataset, it uses the standard dataset provided by keras
+    # The code also prepare the dataset essentially
     def __init__(self, feature='tfidf', **kwargs):
         super(IMDB, self).__init__(**kwargs)
         if self.conf is not None:
@@ -32,13 +33,16 @@ class IMDB(ds_base):
                     # skip_top=0, maxlen=None, seed=113, start_char=1, oov_char=2, index_from=3)
             (X_train, y_train), (X_testt,y_test) = imdb.load_data(num_words=None,
                     skip_top=0,maxlen=None, seed=113, start_char=1, oov_char=2, index_from=3)
+        #Filter out data, e.g if the dataset = train, only use X_train and y_train
         X, y = self.get_data_by_imageset(X_train, y_train, X_test, y_test)
+
         print('data_set={}, Average sequence length: {}'.format(self.data_set, np.mean(list(map(len, X)))))
 
         #feature
         if feature == 'origin':
             maxlen = 400
             X = sequence.pad_sequences(X, maxlen=maxlen)
+        #Transform a count matrix to a normalized tf or tf-idf representation
         elif feature == 'tfidf':
             from sklearn.feature_extraction.text import TfidfTransformer
             transformer = TfidfTransformer(smooth_idf=False)
