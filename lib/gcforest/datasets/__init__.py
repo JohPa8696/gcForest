@@ -45,6 +45,7 @@ def get_ds_class(type_name):
 
 def get_dataset(ds_config):
     type_name = ds_config['type']
+    # ds: stands for dataset
     ds_config.pop("type")
     ds_class = get_ds_class(type_name)
     if ds_class is None:

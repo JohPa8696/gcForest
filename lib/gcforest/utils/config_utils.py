@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+# This function load
 def load_json(path):
     import json
     """

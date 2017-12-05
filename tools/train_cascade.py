@@ -12,7 +12,7 @@ import logging
 import numpy as np
 import json
 
-sys.path.insert(0, 'lib')
+sys.path.insert(0, '/home/dpha010/Desktop/gcForest/lib')
 from gcforest.utils.log_utils import get_logger, update_default_level, update_default_logging_dir
 from gcforest.utils.config_utils import load_json
 #update_default_level(logging.DEBUG)
@@ -26,6 +26,7 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
+    #config is essentially a Json string of the model configuration
     config = load_json(args.model)
     if args.log_dir is not None:
         update_default_logging_dir(args.log_dir)
